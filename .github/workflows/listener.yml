@@ -1,0 +1,16 @@
+name: Listener Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-workflow]  # Event type to listen for
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run some action
+        run: echo "Hello from Repository 2"
